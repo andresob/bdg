@@ -1,0 +1,9 @@
+.Color{
+    top: 4px!important;
+    left: 4px!important;
+    height: 13px!important;
+    width: 13px!important;
+    -webkit-border-radius: 360px;
+    -moz-border-radius: 360px;
+    border-radius: 360px;
+}
