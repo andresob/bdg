@@ -33,7 +33,13 @@
 
 		<div class="section main">
 			<div class="query-wrapper section-header">
-				<textarea placeholder="SELECT * FROM ..." class="query autogrow"></textarea>
+				<div class="query-holder">
+					<div id="query" placeholder="SELECT * FROM ..." contentEditable="true" class="query">
+					</div>
+				</div>
+				<div class="query-btns">
+					<button title="Executar" data-toggle="tooltip" class="btn btn-success btn-small"><i class="icon-play"></i></button>
+				</div>
 			</div>
 
 			<div class="tab active view_query">
@@ -61,7 +67,6 @@
 
 	<!-- JS:charts-->
 	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
-
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/jquery.plugins.js"></script>
 	
