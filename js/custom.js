@@ -27,25 +27,59 @@ $(document).ready(function () {
 		var sql = query_textarea.html();
 		current_query = strip_tags(sql, "<br>");
 
-		var code = (e.keyCode ? e.keyCode : e.which);
-		consoleLog(code);
-		if(code == 32) { //spacebar
-			analyseQuery();
-		}
+		analyseQuery();
 
 	});
 
 	query_textarea.html(default_query_text);
 
 	$('#schema_tables .schema_table').wookmark({container: $("#schema_tables"), offset: 10});
-
+	$(window).resize(function() {
+		$('#schema_tables .schema_table').wookmark({container: $("#schema_tables"), offset: 10});
+	});
    
   });
 
 function consoleLog(msg) { console.log(msg); }
 
 function analyseQuery() {
-	console.log(current_query);	
+	var q = replaceAll("<br>", " ", current_query);
+	q = replaceAll("<br/>", " ", q);
+	q = replaceAll("&nbsp", " ", q);
+
+	$("#schema_tables .selected").removeClass('selected');
+	var analysis = simpleSqlParser.sql2ast(q);
+
+	console.log(analysis);
+
+	if(typeof analysis.FROM !== "undefined" && analysis.FROM.length > 0) {
+		for(var i in analysis.FROM) {
+			var table = $.trim(analysis.FROM[i].table);
+			table = table.split(" ");
+			table = table[0];
+			$("#schema_tables [data-table='"+table+"']").addClass('selected');
+		}
+
+		if(typeof analysis.SELECT !== "undefined" && analysis.SELECT.length > 0) {
+			for(var i in analysis.SELECT) {
+				var column = analysis.SELECT[i];
+				if(column == "*") {
+					$("#schema_tables [data-table='"+table+"'] [data-column]").addClass('selected');
+				} else {
+					$("#schema_tables [data-table='"+table+"'] [data-column='"+column+"']").addClass('selected');
+				}
+			}
+		}
+	} else if(typeof analysis.SELECT !== "undefined" && analysis.SELECT.length > 0) {
+		for(var i in analysis.SELECT) {
+			var column = analysis.SELECT[i];
+			if(column == "*") {
+				$("#schema_tables [data-column]").addClass('selected');
+			} else {
+				$("#schema_tables  [data-column='"+column+"']").addClass('selected');
+			}
+		}
+	}
 }
 
 function highlightSQL(text) {
@@ -71,4 +105,8 @@ function strip_tags (input, allowed) {
     return input.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {
         return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
     });
+}
+
+function replaceAll(find, replace, str) {
+  return str.replace(new RegExp(find, 'g'), replace);
 }

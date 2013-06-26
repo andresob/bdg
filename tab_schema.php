@@ -13,10 +13,10 @@
 
 	function table_ui($name, $fields) {
 
-		$html = "<li class='schema_table'>";
+		$html = "<li class='schema_table' data-table='$name'>";
 		$html .= "<div class='schema_title'>$name</div>";
 		foreach ($fields as $key => $value) {
-			$html .= "<div class='schema_column'>$key</div>";
+			$html .= "<div data-column='$key' class='schema_column'>$key</div>";
 		}
 		$html .= "</li>";
 		return $html;

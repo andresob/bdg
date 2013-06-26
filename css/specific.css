@@ -127,6 +127,14 @@ li.schema_table > .schema_column {
 	padding: 5px;
 }
 
+li.schema_table.selected {
+	border: 1px solid rgb(51, 143, 196);;
+}
+
+li.schema_table > .schema_column.selected {
+	background-color: rgb(255, 255, 210);
+}
+
 
 
 /* autogrow */
