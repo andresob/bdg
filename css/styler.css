@@ -184,15 +184,7 @@ body .content .section.menu ul.navigation li a i {
 body .content .section.menu ul.navigation li a span {
   display: block;
 }
-body .content .section.menu ul.navigation li.current a {
-  color: #FFF;
-  text-decoration: none;
-  background: #15aaff;
-  border: #118bd0 solid 1px;
-  border-left: none;
-  position: relative;
-  margin-right: -1px;
-}
+
 body .content .section.menu ul.navigation li.current a i {
   color: #fff;
   text-shadow: none;
@@ -209,6 +201,19 @@ body .content .section.menu ul.navigation li:hover a i {
   text-shadow: none;
 }
 
+body .content .section.menu ul.navigation li.current a, body .content .section.menu ul.navigation li.current:hover a {
+  color: #FFF;
+  text-decoration: none;
+  background: #15aaff;
+  border: #118bd0 solid 1px;
+  border-left: none;
+  position: relative;
+  margin-right: -1px;
+}
+body .content .section.menu ul.navigation li.current:hover a i {
+  color: #FFF;
+  text-shadow: none;
+}
 
 body .content .section.menu ul.navigation li:first-child a {
   border-top: none;

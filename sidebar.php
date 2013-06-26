@@ -21,6 +21,13 @@
 <div class="widget bg-color blue">
 	<header class="widget-header">
 		<h3><i class="icon-map-marker"></i> queries</h3>
+
 	</header>
+	<article class="widget-content">
+		<ul class="queries_list">
+			<li class="queries_list_item"><span class="color"></span> <span class="sql">SELECT * FROM brasil</span></li>
+			<li class="queries_list_item"><span class="color"></span> <span class="sql">SELECT * FROM brasil</span></li>
+		</ul>
+	</article>
 
 </div>
