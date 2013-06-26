@@ -1,0 +1,45 @@
+#tudo{height: 100%; position: relative; min-height: 300px; overflow: auto; width: 100%;}
+    #consulta{
+        float: left;
+        width: 80%;
+    }
+            .mainlayer{
+                height: 60%;
+                margin-bottom: 5px;
+                overflow: auto;
+                width: 100%;
+            }
+            
+            #formulario{
+                bottom: 0; 
+                height: 25%; 
+                overflow: hidden; 
+                width: 99%;
+            }
+                form{
+                    height: 100%;
+                    margin-left: 10px;
+                    position: relative;
+                    overflow: auto;
+                    width: 97%;
+                }
+                    textarea{height: 70%; margin-top: 10px; position: relative; width: 100%; border: none; font-size: 10px;}
+                    #other{font-size: 10px;}
+                               
+    #listlayers{
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -o-box-sizing:border-box;
+        box-sizing:border-box;
+
+        border-collapse:collapse;
+        display: block;
+        float: right;
+        height: 99%;
+        overflow-x:hidden;
+        overflow-y: scroll;
+        padding: 0;
+        width: 19.5%;
+    }
+            
+                            

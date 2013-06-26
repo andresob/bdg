@@ -1,0 +1,43 @@
+.scroll {
+    padding:0;
+    width:100%;
+}
+        #opcoes a{
+            text-decoration: none;
+            color: inherit;
+        }
+        
+                #opcoes a:hover{
+                    color: #c6c6c6;
+                }
+
+        .scroll ul {
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+
+                .scroll li {
+                    font-size:14px;
+                    margin:2px;
+                    max-height: 100px;
+                    min-width: 100px;
+                    padding:2px;
+                    
+                }
+                        .layer a{color: #000; text-decoration: none;}
+                        .item{
+                            overflow:hidden;
+                            max-height: 80px;
+                        }
+
+                        .acoes{
+                            height: 20px;
+                        }
+                                .acoes a{
+                                    float: left;
+                                    color: #262626;
+                                }
+.consultaativa{
+    background: red;
+}
