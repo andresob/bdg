@@ -73,6 +73,8 @@
 	<script src="js/jquery.plugins.js"></script>
 	
 	<script src="js/bootstrap.js"></script>
+	
+	<script src="js/sqlparser.js" type="text/javascript" charset="utf-8"></script>
 	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
 	<script src="js/custom.js"></script>
 	
