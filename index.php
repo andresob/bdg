@@ -34,14 +34,15 @@
 	</div>	
 
 		<div class="section main">
-			<div class="query-wrapper section-header">
+			<div id="query_wrapper" class="query-wrapper section-header">
 				<div class="query-holder">
-					<div id="query" placeholder="SELECT * FROM ..." contentEditable="true" class="query">
-					</div>
+					<div id="query" placeholder="SELECT * FROM ..." contentEditable="true" class="query"></div>
 				</div>
 				<div class="query-btns">
 					<button title="Executar" data-toggle="tooltip" class="btn btn-success btn-small"><i class="icon-play"></i></button>
 				</div>
+			</div>
+			<div id="query_spacer" class="query-spacer">
 			</div>
 
 			<div class="tab active view_query">
