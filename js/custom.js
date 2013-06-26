@@ -16,8 +16,7 @@ $(document).ready(function () {
 	var query_textarea = $('#query');
 
 	query_textarea.focus(function() {
-		var newQuery = highlightSQL(current_query);
-		query_textarea.html(newQuery);
+		query_textarea.html(current_query);
 	});
 
 	query_textarea.blur(function() {
@@ -28,22 +27,26 @@ $(document).ready(function () {
 		var sql = query_textarea.html();
 		current_query = strip_tags(sql, "<br>");
 
-		// var code = (e.keyCode ? e.keyCode : e.which);
-		// consoleLog(code);
-		// if(code == 32) { //spacebar
-		// 	var newQuery = highlightSQL(query_textarea.html());
-		// 	query_textarea.html(newQuery);
-		// 	moveCaretToEnd(query_textarea);
-		// }
+		var code = (e.keyCode ? e.keyCode : e.which);
+		consoleLog(code);
+		if(code == 32) { //spacebar
+			analyseQuery();
+		}
 
 	});
 
 	query_textarea.html(default_query_text);
 
+	$('#schema_tables .schema_table').wookmark({container: $("#schema_tables"), offset: 10});
+
    
   });
 
 function consoleLog(msg) { console.log(msg); }
+
+function analyseQuery() {
+	console.log(current_query);	
+}
 
 function highlightSQL(text) {
 
