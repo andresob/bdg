@@ -1,0 +1,98 @@
+.query {
+	resize: none;
+	width: 100%;
+	height: 30px;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.autogrow {
+	resize: none;
+}
+
+.tab {
+	display: none;
+}
+.tab.active {
+	display: block;
+}
+
+.schema div.table_schema {
+	background-color: #ffffff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 5px;
+	border: 1px solid #dedede;
+}
+
+/* simp Modal */
+
+.simpTooltip {
+	position:absolute;
+	background:#444;
+	padding:7px 10px;
+	color:#FCFCFC;
+	display:none;
+	z-index: 11;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.simp_overlay {
+    background: #000;
+    display: none;
+}
+.simp_modal {
+    width: 600px;
+    padding: 30px;
+    display: none;
+    background: #FFF;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0px 8px rgba(0, 0, 0, 0.4);
+    text-align: justify;
+    margin-bottom: 50px;
+}
+.simp_modal .close_button {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+    font-family: sans-serif;
+}
+.simp_modal .close_button:hover {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+.simp_modal.wide {
+    width: 900px;
+}
+.simp_modal.narrow {
+    width: 225px;
+}
+.simp_modal.dark {
+    background: #333;
+    color: #fff;
+}

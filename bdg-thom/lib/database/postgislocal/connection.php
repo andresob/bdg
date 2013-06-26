@@ -5,6 +5,7 @@
     define("bd_server"  , "localhost");
     define("bd_user"    , "postgres");
     define("bd_password", "");
+    define("bd_schema"  , "geodata");
     define("bd_port"    , "54321");
     define("geografico" , true);
     
@@ -12,7 +13,10 @@
         return     "
         SELECT information_schema.tables.table_name as tabela, column_name as coluna
         FROM information_schema.columns, information_schema.tables
-        WHERE information_schema.tables.table_name = information_schema.columns.table_name and information_schema.tables.table_catalog = '".bd_name."' and information_schema.tables.table_schema = 'public' and information_schema.tables.table_type = 'BASE TABLE'
+        WHERE information_schema.tables.table_name = information_schema.columns.table_name
+        and information_schema.tables.table_catalog = '".bd_name."'
+        and information_schema.tables.table_schema = '".bd_schema."'
+        and information_schema.tables.table_type = 'BASE TABLE'
         ORDER BY information_schema.tables.table_name, column_name;
         ";
     }
@@ -24,8 +28,8 @@
             SELECT information_schema.tables.table_name as tabela, column_name as coluna
             FROM  information_schema.columns, information_schema.tables
             WHERE information_schema.tables.table_name = information_schema.columns.table_name and
-            information_schema.tables.table_catalog = 'hat' and
-            information_schema.tables.table_schema = 'public' and
+            information_schema.tables.table_catalog = '".bd_name."' and
+            information_schema.tables.table_schema = '".bd_schema."' and
             information_schema.tables.table_type = 'BASE TABLE'
             ORDER BY information_schema.tables.table_name, column_name
         );";
