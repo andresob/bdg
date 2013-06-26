@@ -4,8 +4,8 @@
     define("bd_name"    , "brasil");
     define("bd_server"  , "localhost");
     define("bd_user"    , "postgres");
-    define("bd_password", "postgres");
-    define("bd_port"    , "5432");
+    define("bd_password", "");
+    define("bd_port"    , "54321");
     define("geografico" , true);
     
     function db_schema() {
