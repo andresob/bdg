@@ -12,7 +12,7 @@
 	<li id="tab_map">
 	  <a onclick="switchTab('#tab_map')">
 		<i class="icon-compass"></i>
-		<span>Mapas</span>
+		<span>Mapa</span>
 	  </a>
 	</li>
 	<li id="tab_results">

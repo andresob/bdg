@@ -15,6 +15,30 @@ input, textarea, [contenteditable] {
 	user-select: auto;
 }
 
+.loader {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	z-index: 100;
+	background-color: #eee;
+	color: #666;
+	text-align: center;
+	padding-top: 300px;
+	font-size: 40px;
+}
+
+
+
+.map {
+	position: absolute;
+	top: 70px;
+	left: 91px;
+	right: 251px;
+	bottom: 0px;
+}
+
 .logo-icon {
 	background-color: #666;
 	display: inline-block;
@@ -110,6 +134,22 @@ ul.queries_list {
   list-style: none;
   margin: 0;
 }
+ul.queries_list li{
+	padding: 5px;
+}
+ul.queries_list li:hover{
+	background-color: #f2f2f2;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+ul.queries_list li .colorPicker-picker {
+	background-color: #f2f2f2;
+	border: 1px solid rgba(36, 36, 36, 0.2);
+}
+ul.queries_list li .sql {
+	cursor: pointer;
+}
 
 .autogrow {
 	resize: none;
@@ -178,7 +218,7 @@ li.schema_table > .schema_column.selected {
 	background-color: rgb(255, 255, 210);
 }
 li.schema_table > .schema_column.selected2 {
-	color: #cc0000;
+	color: #dd0000;
 }
 
 
@@ -277,4 +317,45 @@ li.schema_table > .schema_column.selected2 {
 .simp_modal.dark {
     background: #333;
     color: #fff;
+}
+#print {
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	z-index: 99;
+}
+
+
+/****** SVG *********/
+
+svg path {
+	stroke: #999;
+	stroke-width: 0.1;
+	fill-opacity: 0.5;
+	fill: #f2f2f2;
+}
+svg path:hover {
+	fill-opacity: 0.8;
+}
+
+@media print {
+	.section.menu, .section.sidebar, .query-wrapper, #print {
+		display: none;
+	}
+	.section.main, #map {
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+	}
+	#map svg {
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+	}
 }

@@ -28,18 +28,39 @@ $bd = new sqlClass();
 $schema = $bd->getSchema();
 
 $query = $_POST['query'];
+$key = base64_encode($query);
 
 if(!$query) {
-	echo json_encode("");
+	$result = "";
 }
 else {
 
-	$result = $bd->consultar($query, true);
+	$var['query'] = $query;
+
+	if(strpos($query,'geom') === false) {
+		$geom = false;
+	}
+	else {
+		$geom = true;
+	}
+
+	$result = $bd->consultar($query, $geom);
+
 	if($result === false) $result['res'] = $bd->getErro();
 	$result['time'] = $bd->getCTime();
+	$var['res'] = $result['res'];
 
-	echo json_encode($result);
-
+	if($geom === true) {
+		$svg = new svgClass();
+		$var['svgmap'] = $svg->draw($key, $result['mapa'], 800, -300, 15);
+		$var['geom'] = true;
+	} else {
+		$var['geom'] = false;
+	}
 }
+
+
+
+echo json_encode($var);
 
 ?>

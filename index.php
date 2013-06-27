@@ -1,7 +1,6 @@
 <?php 
-session_start();
 
-include('init.php');
+require_once 'init.php';
 
 ?>
 
@@ -32,6 +31,10 @@ include('init.php');
 	<!-- Fav and touch icons -->
   </head>
   <body cz-shortcut-listen="true">
+
+	<div id="loader" class="loader">
+		<i class="icon-spinner icon-spin"></i>
+	</div>
 
 <div class="content clearfix">
 
@@ -71,13 +74,15 @@ include('init.php');
 	<!-- Javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 
 	<!-- JS:charts-->
 	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
 	<script src="js/jquery.dataTables.min.js"></script>
 	<script src="js/jquery.plugins.js"></script>
+	<script src="js/raphael.min.js"></script>
+	<script src="js/jquery.svgpan.js"></script>
 	
 	<script src="js/bootstrap.js"></script>
 	
@@ -85,7 +90,6 @@ include('init.php');
 	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
 	<script src="js/utils.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="js/custom2.js"></script>
   <script type="text/javascript">
     $("ul:first").dragsort();
   </script>

@@ -19,6 +19,6 @@ if(!defined("PROJECT")) define('PROJECT', $pj_name);
 $project = (PROJECT == "") ? "": PROJECT;
 define('URL',  "http://".$_SERVER['SERVER_NAME'] . "$project/index.php");
 
-include('lib/processa.php');
+require_once 'lib/processa.php';
 
 ?>

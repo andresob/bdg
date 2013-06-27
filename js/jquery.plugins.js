@@ -999,6 +999,7 @@ jQuery wookmark plugin
         **/
         changeColor : function (value) {
             selectorOwner.css("background-color", value);
+            selectorOwner.attr("data-color", value);
             selectorOwner.prev("input").val(value).change();
 
             $.fn.colorPicker.hidePalette();
@@ -1082,3 +1083,6 @@ jQuery wookmark plugin
     };
 
 })(jQuery);
+
+/***********************************************/
+
