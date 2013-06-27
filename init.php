@@ -1,7 +1,6 @@
 <?php
 
 require_once 'lib/autoload.php';
-session_start();
 
 $possible_db = array('brasil');
 
@@ -20,6 +19,6 @@ if(!defined("PROJECT")) define('PROJECT', $pj_name);
 $project = (PROJECT == "") ? "": PROJECT;
 define('URL',  "http://".$_SERVER['SERVER_NAME'] . "$project/index.php");
 
-require_once 'lib/processa.php';
+include('lib/processa.php');
 
 ?>

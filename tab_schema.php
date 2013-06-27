@@ -1,6 +1,9 @@
 <?php
 
 	$schema = $bd->getSchema();
+	$_SESSION['bd'] = $bd;
+
+	$session_encoded = json_encode($_SESSION);
 
 	function print_tables($schema) {
 

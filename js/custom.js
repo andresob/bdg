@@ -103,6 +103,10 @@ $(document).ready(function () {
 
 function executeQuery(query) {
 
+	if(query.length < 5) {
+		return;
+	};
+
 	var query_md5 = md5(query);
 
 	if(typeof cached_queries[query_md5] !== 'undefined') {
@@ -117,8 +121,13 @@ function executeQuery(query) {
 
 		$.post('lib/execute_query.php', pars, function(data) {
 
-			alert(data);
-			cached_queries[query_md5] = "teste";
+			data = $.parseJSON(data);
+
+			if(data!="") {
+
+				console.log(data);
+				cached_queries[query_md5] = "teste";
+			}
 
 		}).error(function() {
 			alert("Ocorreu um erro de conexão.");
@@ -152,7 +161,7 @@ function getSQL() {
 	selected_tables.each(function() {
 		var table_name = $(this).attr('data-table');
 		from_obj = {
-			table: "`"+table_name+"`",
+			table: table_name,
 			as: ""
 		}
 		ast.FROM.push(from_obj);
@@ -165,13 +174,13 @@ function getSQL() {
 		// } else {
 			$(this).find('.schema_column.selected').each(function() {
 				var column_name = $(this).attr('data-column');
-				ast.SELECT.push("`"+table_name+"`.`"+column_name+"`");
+				ast.SELECT.push(table_name+"."+column_name);
 			});
 		// }
 
 	});
 
-	console.log(ast);
+	//console.log(ast);
 	var sql_analysis = simpleSqlParser.ast2sql(ast);
 	//console.log(sql_analysis);
 

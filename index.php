@@ -1,4 +1,9 @@
-<?php require_once 'init.php'; ?>
+<?php 
+session_start();
+
+include('init.php');
+
+?>
 
 <!DOCTYPE html>
   <html lang="en">
