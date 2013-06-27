@@ -51,13 +51,13 @@ include('init.php');
 			<div id="query_spacer" class="query-spacer">
 			</div>
 
-			<div class="tab active view_query">
+			<div id="tab_query" class="tab active">
 				<?php include('tab_schema.php'); ?>
 			</div>
-			<div class="tab view_query">
+			<div id="tab_map" class="tab">
 				<?php include('tab_map.php'); ?>
 			</div>
-			<div class="tab view_query">
+			<div id="tab_results" class="tab">
 				<?php include('tab_results.php'); ?>
 			</div>
 		</div>

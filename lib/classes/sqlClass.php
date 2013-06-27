@@ -59,6 +59,9 @@ class sqlClass{
     private function geoconsult($consulta){
         $result = array('res' => array(), 'mapa' => array());
         //Apenas executa esses passos se se tratar de um select(case insensitive)
+
+        //substitui todo geom por outra coisa:
+
         if (preg_match("/^[\t\n ]*SELECT/i", $consulta)) {
             $tabela_temporaria = "tabela_temporaria_" . rand(0, 100000);
             //(I) Cria uma tabela temporaria para receber o resultado da consulta do cliente.

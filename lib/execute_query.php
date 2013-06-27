@@ -28,7 +28,6 @@ $bd = new sqlClass();
 $schema = $bd->getSchema();
 
 $query = $_POST['query'];
-$query = addslashes($query);
 
 if(!$query) {
 	echo json_encode("");
