@@ -27,4 +27,10 @@
 		<span>Exercícios</span>
 	  </a>
 	</li>
+	<li id="tab_about" >
+	  <a onclick="switchTab('#tab_about')">
+		<i class="icon-group"></i>
+		<span>Sobre</span>
+	  </a>
+	</li>
 </ul>

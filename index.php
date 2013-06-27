@@ -63,6 +63,9 @@ require_once 'init.php';
 			<div id="tab_results" class="tab">
 				<?php include('tab_results.php'); ?>
 			</div>
+			<div id="tab_about" class="tab">
+				<?php include('tab_about.php'); ?>
+			</div>
 		</div>
 		<div class="section sidebar">
 	
