@@ -1,9 +1,12 @@
 var current_query = "";
 var default_query_text = "Digite sua consulta SQL";
+var cached_queries = [];
+
+/*********** AFTER PAGE IS LOADED ************/
 
 $(document).ready(function () {
 
-    $("[rel=tooltip]").tooltip();
+    $("[rel='tooltip']").tooltip({placement: "bottom"});
 
     $(".autogrow").autogrow();
     
@@ -17,6 +20,7 @@ $(document).ready(function () {
 	var query_spacer = $("#query_spacer");
 	var query_wrapper = $("#query_wrapper");
 	var schema_tables = $("#schema_tables");
+	var execute_query = $("#execute_query");
 
 	query_textarea.focus(function() {
 	 	if(query_textarea.html() == default_query_text) query_textarea.html('');
@@ -39,7 +43,6 @@ $(document).ready(function () {
 		query_spacer.height(query_textarea.outerHeight() + 50);
 		var a = analyseQuery();
 
-		console.log(a);
 		//var sql_analysis = simpleSqlParser.ast2sql(a);
 		//console.log(sql_analysis);
 
@@ -84,10 +87,46 @@ $(document).ready(function () {
 	$(window).resize(function() {
 		adjustTables();
 	});
+
+	//clica em consultar
+
+	execute_query.click(function() {
+
+		executeQuery(current_query);
+
+	});
    
   });
 
-function consoleLog(msg) { console.log(msg); }
+
+/*********** CUSTOM FUNCTIONS ************/
+
+function executeQuery(query) {
+
+	var query_md5 = md5(query);
+
+	if(typeof cached_queries[query_md5] !== 'undefined') {
+
+		alert("Já existe! "+query_md5);
+
+	} else {
+
+		var pars = {
+			query: query
+		}
+
+		$.post('lib/execute_query.php', pars, function(data) {
+
+			alert(data);
+			cached_queries[query_md5] = "teste";
+
+		}).error(function() {
+			alert("Ocorreu um erro de conexão.");
+		});
+
+	}
+
+}
 
 function adjustTables() {
 	$('#schema_tables .schema_table').wookmark({container: $("#schema_tables"), offset: 10});
@@ -279,15 +318,3 @@ function highlightSQL(text) {
 
 }
 
-function strip_tags (input, allowed) {
-    allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('');
-    var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
-        commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
-    return input.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {
-        return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
-    });
-}
-
-function replaceAll(find, replace, str) {
-  return str.replace(new RegExp(find, 'g'), replace);
-}

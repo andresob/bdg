@@ -1,5 +1,6 @@
 <ul class="navigation nav-collapse">
 	<li class="logo">
+		<div class="logo-icon"><i class="icon-globe"></i></div>
 		<span>GeoSQL</span>
 	</li>
 	<li  class="current" >

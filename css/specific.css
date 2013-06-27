@@ -15,6 +15,21 @@ input, textarea, [contenteditable] {
 	user-select: auto;
 }
 
+.logo-icon {
+	background-color: #666;
+	display: inline-block;
+	padding: 1px 6px;
+	margin-bottom: 5px;
+	color: #fff;
+	font-size: 42px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+.logo {
+	margin-bottom: 10px;
+}
+
 .query-wrapper {
 	position: relative;
 	position: fixed;
@@ -127,9 +142,9 @@ li.schema_table > .schema_title {
 	font-weight: bold;
 	background-color: #f2f2f2;
 	padding: 5px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
 	cursor: pointer;
 }
 li.schema_table > .schema_title:hover {
@@ -147,10 +162,10 @@ li.schema_table > .schema_column:hover {
 }
 
 li.schema_table.selected {
-	border: 1px solid rgb(51, 143, 196);
+	border: 1px solid rgb(32, 157, 230);
 }
 li.schema_table.selected > .schema_title{
-	background-color: rgb(51, 143, 196);
+	background-color: rgb(32, 157, 230);
 	color: white;
 }
 
