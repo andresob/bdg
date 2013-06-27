@@ -20,6 +20,7 @@ include('init.php');
 	<link href="css/styler.css" rel="stylesheet">
 	<link href="css/specific.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/colorPicker.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
