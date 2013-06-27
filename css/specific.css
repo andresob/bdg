@@ -91,6 +91,11 @@ input, textarea, [contenteditable] {
 	color: #555;
 }
 
+ul.queries_list {
+  list-style: none;
+  margin: 0;
+}
+
 .autogrow {
 	resize: none;
 }

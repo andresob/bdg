@@ -24,7 +24,7 @@
 	</header>
 
 	<article class="widget-content">
-		<ul class="queries_list" id="list">
+		<ul class="queries_list">
 			<li class="queries_list_item"><span class="color"></span> <span class="sql">SELECT * FROM brasil</span></li>
 			<li class="queries_list_item"><span class="color"></span> <span class="sql">SELECT * FROM brasiiiiiiiil</span></li>
 		</ul>
