@@ -40,7 +40,7 @@
 					<div id="query" placeholder="SELECT * FROM ..." contentEditable="true" class="query"></div>
 				</div>
 				<div class="query-btns">
-					<button title="Executar" data-toggle="tooltip" class="btn btn-success btn-small"><i class="icon-play"></i></button>
+					<button id="execute_query" title="Executar" rel="tooltip" class="btn btn-inverse btn-small"><i class="icon-play"></i></button>
 				</div>
 			</div>
 			<div id="query_spacer" class="query-spacer">
@@ -78,6 +78,7 @@
 	
 	<script src="js/sqlparser.js" type="text/javascript" charset="utf-8"></script>
 	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
+	<script src="js/utils.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/custom2.js"></script>
   <script type="text/javascript">
