@@ -79,6 +79,10 @@
 	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
 	<script src="js/utils.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="js/custom2.js"></script>
+  <script type="text/javascript">
+    $("ul:first").dragsort();
+  </script>
 	
 
   </body>
